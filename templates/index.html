@@ -1,0 +1,44 @@
+
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="service_section layout_padding">
+  <div class="service_container">
+    <div class="container ">
+      <div class="heading_container">
+        <h2>
+          Our <span>Fuel Stations</span>
+        </h2>
+        <p>
+          We provide our products with good quality and same price. 
+        </p>
+      </div>
+      <div class="row">
+        {% for i in ser %}
+        <div class="col-md-6 ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{{ i.image.url }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {{i.station.first_name}},{{i.location}}
+                <h6>Email:{{i.station.email}},Phone:{{i.phone}}</h6>
+                <h6>Licence Number::{{i.License}}</h6>
+
+              </h5>
+              <p>
+                <div>
+                  <a href="{% url 'booking' i.id %}" class="btn">Order</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+       {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

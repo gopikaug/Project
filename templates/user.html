@@ -1,0 +1,63 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url({% static 'images/bg-01.jpg' %});">
+		<h2 class="ltext-105 cl0 txt-center">
+			Users
+		</h2>
+	</section>
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+                                      <th class="success" style="color: white;">User Name</th>
+
+                                 <th class="success" style="color: white;">Email</th>
+                                  <th class="success" style="color: white;">Phone Number</th>
+                                  <th class="success" style="color: white;">Address</th>
+
+
+     {% for i in shop  %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.user.first_name }}</td>
+
+                                    <td>{{ i.user.email }}</td>
+
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.address }}</td>
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

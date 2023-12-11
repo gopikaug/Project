@@ -1,0 +1,67 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url({% static 'images/bg-01.jpg' %});">
+		<h2 class="ltext-105 cl0 txt-center">
+			Fuel Stations
+		</h2>
+	</section>
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+                                      <th class="success" style="color: white;">station Name</th>
+                                      <th class="success" style="color: white;">Image</th>
+
+                                 <th class="success" style="color: white;">Email</th>
+                                  <th class="success" style="color: white;">Phone Number</th>
+                                  <th class="success" style="color: white;">Location</th>
+                                  <th class="success" style="color: white;">License</th>
+
+
+     {% for i in shop  %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.station.first_name }}</td>
+                                    <td><img style="max-width: 200px;max-height:140px;" src="/media/{{ i.image }}"></td>
+
+                                    <td>{{ i.station.email }}</td>
+
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.location }}</td>
+                                    <td>{{ i.License }}</td>
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}
